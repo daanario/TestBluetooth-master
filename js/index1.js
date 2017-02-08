@@ -1,5 +1,5 @@
 //Adressen på Bluetooth Mate, Password er 1234
-var macAddress = "00:06:66:07:B1:B7";
+var macAddress = "00:06:66:7C:8A:55";
 
 function onLoad(){
 	document.addEventListener("deviceready", onDeviceReady, false);
