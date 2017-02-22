@@ -1,8 +1,45 @@
-//Adressen på Bluetooth Mate, Password er 1234
+
 var macAddress = "00:06:66:7C:8A:55";
 
 function onLoad(){
+    
 	document.addEventListener("deviceready", onDeviceReady, false);
+    
+    document.getElementById("F").addEventListener("touchstart", Forward, false);
+    document.getElementById("F").addEventListener("touchend", Stop, false);
+    
+    document.getElementById("B").addEventListener("touchstart", Back, false);
+    document.getElementById("B").addEventListener("touchend", Stop, false);
+    
+    document.getElementById("L").addEventListener("touchstart", Left, false);
+    document.getElementById("L").addEventListener("touchend", Stop, false);
+    
+    document.getElementById("R").addEventListener("touchstart", Right, false);
+    document.getElementById("R").addEventListener("touchend", Stop, false);
+    
+}
+
+//Control Functions
+
+
+function Stop() {
+    sendToArduino("s");
+}
+
+function Forward () {
+    sendToArduino("f");
+}
+
+function Back() {
+    sendToArduino("b");
+}
+
+function Left() {
+    sendToArduino("l");
+}
+
+function Right() {
+    sendToArduino("r");
 }
 
 function onDeviceReady(){
