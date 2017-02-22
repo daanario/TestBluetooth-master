@@ -25,9 +25,14 @@ void setup(){
  
   Serial.begin(9600);
   bluetooth.begin(115200);//standard bluetooth mate
-}
 
+
+}
+int Speed = 100;
 void loop(){
+
+  analogWrite(enable1,Speed);
+  analogWrite(enable2,Speed);
   
   long duration, cm;
   digitalWrite(triggerPin,LOW);
@@ -40,7 +45,7 @@ void loop(){
   if(cm > 400) {
     cm = 400;
   }
-  if(cm < 5){
+  if(cm < 10){
     stopMotors();
   }
   
@@ -81,39 +86,60 @@ void modtagFraBluetooth(){
       stopMotors();
     }
     
+    else if (msg=='i') {
+      incSpeed();
+    }
+    else if (msg=='d') {
+      decSpeed();
+    }
     
     bluetooth.print(msg); //returner det modtagne
   }
 }
 
-void forward(){
-  digitalWrite(input1,HIGH);
-  digitalWrite(input2,LOW);
-  digitalWrite(input3,HIGH);
-  digitalWrite(input4,LOW);
+void incSpeed() {
+  Speed += 25;
+  if(Speed > 250) {
+    Speed = 250;
+  }
+}
+
+void decSpeed() {
+  Speed -= 25;
+  if(Speed < 25) {
+    Speed = 25;
+  }
   
 }
 
-void back() {
+void forward(){
   digitalWrite(input1,LOW);
   digitalWrite(input2,HIGH);
   digitalWrite(input3,LOW);
   digitalWrite(input4,HIGH);
+  
+}
+
+void back() {
+  digitalWrite(input1,HIGH);
+  digitalWrite(input2,LOW);
+  digitalWrite(input3,HIGH);
+  digitalWrite(input4,LOW);
  
 }
 
 void left() {
-  digitalWrite(input1,HIGH);
+  digitalWrite(input1,LOW);
   digitalWrite(input2,LOW);
   digitalWrite(input3,LOW);
-  digitalWrite(input4,LOW);
+  digitalWrite(input4,HIGH);
   
 }
 
 void right() {
   digitalWrite(input1,LOW);
-  digitalWrite(input2,LOW);
-  digitalWrite(input3,HIGH);
+  digitalWrite(input2,HIGH);
+  digitalWrite(input3,LOW);
   digitalWrite(input4,LOW);
   
 }

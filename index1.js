@@ -1,5 +1,7 @@
 
 var macAddress = "00:06:66:7C:8A:55";
+var Speed = 100;
+
 
 function onLoad(){
     
@@ -17,6 +19,12 @@ function onLoad(){
     document.getElementById("R").addEventListener("touchstart", Right, false);
     document.getElementById("R").addEventListener("touchend", Stop, false);
     
+	document.getElementById("incSpeed").addEventListener("touchstart", incSpeed, false);
+    document.getElementById("incSpeed").addEventListener("touchend", Stop, false);
+	
+	document.getElementById("decSpeed").addEventListener("touchstart", decSpeed, false);
+    document.getElementById("decSpeed").addEventListener("touchend", Stop, false);
+	
 }
 
 //Control Functions
@@ -24,30 +32,54 @@ function onLoad(){
 
 function Stop() {
 	document.getElementById("showMsg").innerHTML = "stop";
-    sendToArduino("s");
+    bluetoothSerial.write("s");
 }
 
 function Forward () {
     document.getElementById("showMsg").innerHTML = "forward";
-	sendToArduino("f");
+	bluetoothSerial.write("f");
 	
 }
 
 function Back() {
     document.getElementById("showMsg").innerHTML = "back";
-	sendToArduino("b");
+	bluetoothSerial.write("b");
 }
 
 function Left() {
     document.getElementById("showMsg").innerHTML = "left";
-	sendToArduino("l");
+	bluetoothSerial.write("l");
 	
 }
 
 function Right() {
 	document.getElementById("showMsg").innerHTML = "right";
-    sendToArduino("r");
+    bluetoothSerial.write("r");
 }
+
+
+
+function incSpeed() {
+	document.getElementById("showMsg").innerHTML = "inc";
+	Speed+=25;
+	if(Speed > 250) {
+    Speed = 250;
+  }
+	document.getElementById("currentSpeed").innerHTML = Speed;
+	bluetoothSerial.write("i");
+	
+}
+
+function decSpeed() {
+	document.getElementById("showMsg").innerHTML = "dec";
+	Speed-=25;
+	 if(Speed < 25) {
+    Speed = 25;
+	 }
+	document.getElementById("currentSpeed").innerHTML = Speed;
+	bluetoothSerial.write("d");
+}
+
 
 function onDeviceReady(){
 	bluetoothSerial.connect(macAddress, onConnect, onDisconnect);
