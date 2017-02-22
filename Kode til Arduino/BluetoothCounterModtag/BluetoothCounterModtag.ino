@@ -45,7 +45,7 @@ void loop(){
   if(cm > 400) {
     cm = 400;
   }
-  if(cm < 10){
+  if(cm < 30){
     stopMotors();
   }
   
@@ -106,8 +106,8 @@ void incSpeed() {
 
 void decSpeed() {
   Speed -= 25;
-  if(Speed < 25) {
-    Speed = 25;
+  if(Speed < 100) {
+    Speed = 100;
   }
   
 }

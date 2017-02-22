@@ -73,8 +73,8 @@ function incSpeed() {
 function decSpeed() {
 	document.getElementById("showMsg").innerHTML = "dec";
 	Speed-=25;
-	 if(Speed < 25) {
-    Speed = 25;
+	 if(Speed < 100) {
+    Speed = 100;
 	 }
 	document.getElementById("currentSpeed").innerHTML = Speed;
 	bluetoothSerial.write("d");
