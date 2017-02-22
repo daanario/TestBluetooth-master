@@ -23,28 +23,30 @@ function onLoad(){
 
 
 function Stop() {
-    sendToArduino("s");
 	document.getElementById("showMsg").innerHTML = "stop";
+    sendToArduino("s");
 }
 
 function Forward () {
-    sendToArduino("f");
-	document.getElementById("showMsg").innerHTML = "forward";
+    document.getElementById("showMsg").innerHTML = "forward";
+	sendToArduino("f");
+	
 }
 
 function Back() {
-    sendToArduino("b");
-	document.getElementById("showMsg").innerHTML = "back";
+    document.getElementById("showMsg").innerHTML = "back";
+	sendToArduino("b");
 }
 
 function Left() {
-    sendToArduino("l");
-	document.getElementById("showMsg").innerHTML = "left";
+    document.getElementById("showMsg").innerHTML = "left";
+	sendToArduino("l");
+	
 }
 
 function Right() {
-    sendToArduino("r");
 	document.getElementById("showMsg").innerHTML = "right";
+    sendToArduino("r");
 }
 
 function onDeviceReady(){
