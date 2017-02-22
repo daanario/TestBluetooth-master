@@ -77,3 +77,11 @@ void right() {
   
 }
 
+void stopMotors() {
+  digitalWrite(input1,LOW);
+  digitalWrite(input2,LOW);
+  digitalWrite(input3,LOW);
+  digitalWrite(input4,LOW);  
+
+}
+
