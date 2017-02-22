@@ -24,22 +24,27 @@ function onLoad(){
 
 function Stop() {
     sendToArduino("s");
+	document.getElementById("showMsg").innerHTML = "stop";
 }
 
 function Forward () {
     sendToArduino("f");
+	document.getElementById("showMsg").innerHTML = "forward";
 }
 
 function Back() {
     sendToArduino("b");
+	document.getElementById("showMsg").innerHTML = "back";
 }
 
 function Left() {
     sendToArduino("l");
+	document.getElementById("showMsg").innerHTML = "left";
 }
 
 function Right() {
     sendToArduino("r");
+	document.getElementById("showMsg").innerHTML = "right";
 }
 
 function onDeviceReady(){
