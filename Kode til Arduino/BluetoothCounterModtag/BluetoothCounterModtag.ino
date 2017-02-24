@@ -9,6 +9,7 @@ const int input1 = 3;
 const int input2 = 2;
 const int input3 = 8;
 const int input4 = 7;
+bool forwardActive = false;
 
 SoftwareSerial bluetooth(bluetoothTx, bluetoothRx);//Arduino RX,Tx
 char msg;
@@ -45,8 +46,9 @@ void loop(){
   if(cm > 400) {
     cm = 400;
   }
-  if(cm < 30){
+  if(cm < 30 && forwardActive){
     stopMotors();
+    forwardActive = false;
   }
   
   bluetooth.listen();
@@ -113,11 +115,13 @@ void decSpeed() {
 }
 
 void forward(){
+  forwardActive = true;
+  
   digitalWrite(input1,LOW);
   digitalWrite(input2,HIGH);
   digitalWrite(input3,LOW);
   digitalWrite(input4,HIGH);
-  
+
 }
 
 void back() {
