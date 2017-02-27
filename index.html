@@ -3,46 +3,52 @@
 https://github.com/don/BluetoothSerial
 -->
 <html>
-    
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1">	
-		<script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="index1.js"></script>
-        <link rel="stylesheet" type="text/css" href="StylesheetArduino.css">
-        
-        <title>Bluetooth Test</title>
-        
-    </head>
-    
-        <body onload="onLoad()">
 
-            <h1>Bluetooth Test</h1>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- links to material icon pack -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  <!--links to roboto font--> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- links to googlemi-->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> <!-- link to google components -->
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="index1.js"></script>
+    <link rel="stylesheet" type="text/css" href="StylesheetArduino.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
-            <div id="fraArduino"></div>
-    </br>
-            <div id="statusDiv"></div>
-			
-			<div id="showMsg"></div></br>
-			<div id="currentSpeed">100</div>
-			
-			
-            </br></br></br>
+</head>
 
-            <div id="F"> Frem</div>
-    </br>
-            <div id="B"> Tilbage</div>
-    </br>
-            <div id="L"> Venstre</div>
-    </br>
-            <div id="R"> Højre</div>
-	</br>
-			<div id="incSpeed">+Speed</div>
-	</br>
-			<div id="decSpeed">-Speed</div>
+<body onload="onLoad()">
+    <div id="navbar">
+        <h1>Controller</h1>
+    </div>
 
-        </body>
+    <div id="status">
+    <div id="fraArduino">counter</div>
+    </br>
+    <div id="statusDiv">Connection Status</div>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+</br>
+</br>
+
+    <div id="F"><i class="material-icons"style="font-size:100px;">keyboard_arrow_up</i></div>
+
+    <div id="L"><i class="material-icons"style="font-size:100px;">keyboard_arrow_left</i></div>
+
+    <div id="R"><i class="material-icons"style="font-size:100px;">keyboard_arrow_right</i></div>
+
+    <div id="B"><i class="material-icons"style="font-size:100px;">keyboard_arrow_down</i></div>
+
+
+</body>
 
 </html>
