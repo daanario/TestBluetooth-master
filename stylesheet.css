@@ -44,7 +44,27 @@ html {
     margin-top: 100px;
 }
 
-#status {                   /* styling for status strings in the html */
+#status, #showMsg {                   /* styling for status strings in the html */
     padding-left: 24px;
     color: #a20000;
 }
+
+#incSpeed {
+    float: left; 
+    width: 33%;
+}
+
+#decSpeed {
+    float: right;
+    width: 33%
+}
+
+#currentSpeed {
+    float: center; 
+    width: 33%
+}
+
+
+
+
+
