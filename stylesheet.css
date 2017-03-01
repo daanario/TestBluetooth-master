@@ -14,6 +14,7 @@ body {
 html {
     margin: 0px; /*makes sure there is 0 margin og padding on html */
     padding: 0px;
+	overflow: hidden;
 }
 
 #navbar {
@@ -52,16 +53,18 @@ html {
 #incSpeed {
     float: left; 
     width: 33%;
+
 }
 
 #decSpeed {
-    float: right;
-    width: 33%
+    float: left;
+    width: 33%;
 }
 
 #currentSpeed {
-    float: center; 
-    width: 33%
+    float: left; 
+    width: 33%;
+
 }
 
 
